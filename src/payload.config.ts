@@ -7,6 +7,12 @@ import { slateEditor } from "@payloadcms/richtext-slate";
 import { buildConfig } from "payload/config";
 
 import Users from "./collections/Users";
+import FormTransfer from "./collections/FormTransfer";
+import Media from "./collections/Media";
+import FormBuyMore from "./collections/FormBuyMore";
+import formDangKy from "./collections/FormDKTDVDL";
+import LinkAff from "./collections/LinkAff";
+import FormAff from "./collections/FormAff";
 
 export default buildConfig({
   admin: {
@@ -14,7 +20,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users],
+  collections: [Users, FormTransfer, Media, FormBuyMore, formDangKy, LinkAff, FormAff],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
