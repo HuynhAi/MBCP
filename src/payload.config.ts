@@ -13,6 +13,13 @@ import FormBuyMore from "./collections/FormBuyMore";
 import formDangKy from "./collections/FormDKTDVDL";
 import LinkAff from "./collections/LinkAff";
 import FormAff from "./collections/FormAff";
+import Meeting from "./collections/Meeting/SalePlanMeeting";
+import Method from "./collections/Meeting/StockSaleMethod";
+import MediaMeeting from "./collections/Meeting/Media_Meeting";
+import Noti from "./collections/SaleAnnouncement/Create";
+import Addpublic from "./collections/SaleAnnouncement/AddPublicOffering";
+import PublicCompany from "./collections/SaleAnnouncement/publicCompany";
+import ShareTransfer from "./collections/ShareTransfer/Create";
 
 export default buildConfig({
   admin: {
@@ -20,7 +27,8 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, FormTransfer, Media, FormBuyMore, formDangKy, LinkAff, FormAff],
+  collections: [Users, FormTransfer, Media, FormBuyMore, formDangKy, LinkAff, FormAff, MediaMeeting, Noti, ShareTransfer, Addpublic],
+  globals: [Meeting, Method, PublicCompany],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
