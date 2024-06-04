@@ -7,7 +7,13 @@ import { slateEditor } from "@payloadcms/richtext-slate";
 import { buildConfig } from "payload/config";
 
 import Users from "./collections/Users";
-import Meeting from "./collections/SalePlanMeeting";
+import Meeting from "./collections/Meeting/SalePlanMeeting";
+import Method from "./collections/Meeting/StockSaleMethod";
+import MediaMeeting from "./collections/Meeting/Media_Meeting";
+import Noti from "./collections/SaleAnnouncement/Create";
+import Addpublic from "./collections/SaleAnnouncement/AddPublicOffering";
+import PublicCompany from "./collections/SaleAnnouncement/publicCompany";
+import ShareTransfer from "./collections/ShareTransfer/Create";
 
 export default buildConfig({
   admin: {
@@ -15,7 +21,8 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Meeting],
+  collections: [Users, MediaMeeting, Noti, ShareTransfer, Addpublic],
+  globals: [Meeting, Method, PublicCompany],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
